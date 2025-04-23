@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人部落格</title>
+    <link rel="stylesheet" href="./styles1.css">
+</head>
+<body>
+    <audio id="myaudio" autoplay="autoplay" loop="loop" preload="auto" src="./Justin Bieber - Off My Face.mp3"></audio>
+    <div class="overlay">  <!-- 增加這一層讓半透明背景覆蓋整個網頁 -->
+        <div class="header">
+            <div class="profile-pic-container">
+                <img src="./me.jpeg" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="nav-button" onclick="showText('about')">
+                    <img src="./user.png" alt="Icon 1">
+                </a>
+                <a href="#" class="nav-button" onclick="showText('interest')">
+                    <img src="./man.png" alt="Icon 2">
+                </a>
+                <a href="#" class="nav-button" onclick="showText('skill')">
+                    <img src="./book.png" alt="Icon 3">
+                </a>
+        </div>
+    </div>
+    <div class="intro-text" id="text-content">
+        <p>104人力銀行興趣何倫碼是A藝術 x R實做</p>
+        <p>我最有興趣想做的是MIS管理人員</p>
+    </div>
+    <script>
+        // 定義不同按鈕顯示的文字
+        const texts = {
+            about:"104人力銀行興趣何倫碼是 I研究 x C事務 <br>我最有興趣想做的是演算法開發工程師",
+            interest: "<br>工作內容:從事演算法的研究工作，找到新的軟體解決方案。  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</br><br>演算法研究：演算法是很複雜的學問，我們可以簡單將演算法視為「事先寫好規則，並讓電腦來自動判斷」</br><br>撰寫全新程式碼：透過前面的研究，將結果發明成為以前沒有的程式碼，讓工程師能用新的指令讓電腦達成新目標。</br><br>演算法工程師在各類公司、各類領域都可能存在，需要解決的問題內容也有非常大的不同。</br><br>工具技能證照:需具備的工具為 C++、Python、C#</br><br>需具備的技能: 網路爬蟲、演算法、深度學習</br><br>薪水待遇:菜鳥月薪$63,500．老鳥月薪$79,647</br><br>工作經驗:5~10年佔41%</br>",
+            skill: "<li type=disc>未來規劃&emsp;  : 先把程式的基礎打好，再去報名實習</li><li type=disc>想學的工具&emsp;  : python,c#,c++</li>"
+        };
+
+        // 點擊按鈕時切換顯示的文字內容
+        function showText(section) {
+            document.getElementById('text-content').innerHTML = "<p>" + texts[section] + "</p>";
+        }
+        // 獲取音頻元素
+        var audioElement = document.getElementById('myaudio');
+        audioElement.volume = 0.7; // 音量範圍是 0.0 到 1.0
+    </script>
+</body>
+</html>
